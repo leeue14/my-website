@@ -15,7 +15,7 @@ const EXPERIENCES: Experience[] = [
     company: "上海薄荷健康科技股份有限公司",
     role: "Java 高级开发工程师",
     period: "2024.09 — 至今",
-    logo: "/logos/boohee.png",
+    logo: `${import.meta.env.BASE_URL}logos/boohee.png`,
     color: "bg-emerald-500",
     initial: "薄",
     highlights: [
