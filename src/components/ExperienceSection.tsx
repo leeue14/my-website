@@ -1,7 +1,10 @@
+import { useState, useCallback } from "react";
+
 interface Experience {
   company: string;
   role: string;
   period: string;
+  logo: string;
   color: string;
   initial: string;
   highlights: string[];
@@ -12,6 +15,7 @@ const EXPERIENCES: Experience[] = [
     company: "上海薄荷健康科技股份有限公司",
     role: "Java 高级开发工程师",
     period: "2024.09 — 至今",
+    logo: "/logos/boohee.png",
     color: "bg-emerald-500",
     initial: "薄",
     highlights: [
@@ -24,6 +28,7 @@ const EXPERIENCES: Experience[] = [
     company: "上海盛大汽车服务集团有限公司",
     role: "Java 高级开发工程师",
     period: "2023.08 — 2024.09",
+    logo: "/logos/shengda.png",
     color: "bg-amber-500",
     initial: "盛",
     highlights: [
@@ -35,6 +40,7 @@ const EXPERIENCES: Experience[] = [
     company: "平安健康互联网股份有限公司",
     role: "Java 高级开发工程师",
     period: "2020.08 — 2023.07",
+    logo: "/logos/pahealth.png",
     color: "bg-blue-500",
     initial: "平",
     highlights: [
@@ -46,6 +52,7 @@ const EXPERIENCES: Experience[] = [
     company: "上海科瓴医疗科技有限公司",
     role: "Java 中级开发",
     period: "2019.03 — 2020.08",
+    logo: "/logos/kelink.png",
     color: "bg-violet-500",
     initial: "科",
     highlights: [],
@@ -54,6 +61,7 @@ const EXPERIENCES: Experience[] = [
     company: "唯智信息技术（上海）股份有限公司",
     role: "Java 开发工程师",
     period: "2018.07 — 2019.03",
+    logo: "/logos/vtimes.png",
     color: "bg-pink-500",
     initial: "唯",
     highlights: [],
@@ -89,6 +97,12 @@ function TimelineItem({
   experience: Experience;
   isLatest: boolean;
 }) {
+  const [imgError, setImgError] = useState(false);
+
+  const handleImgError = useCallback(() => {
+    setImgError(true);
+  }, []);
+
   return (
     <div className="relative">
       {/* Timeline dot */}
@@ -102,13 +116,23 @@ function TimelineItem({
 
       <div className="flex gap-4">
         {/* Logo */}
-        <div
-          className={`flex-shrink-0 w-10 h-10 rounded-lg ${experience.color} flex items-center justify-center`}
-        >
-          <span className="text-sm font-bold text-white">
-            {experience.initial}
-          </span>
-        </div>
+        {!imgError ? (
+          <img
+            src={experience.logo}
+            alt={experience.company}
+            loading="lazy"
+            onError={handleImgError}
+            className="flex-shrink-0 w-10 h-10 rounded-lg object-contain bg-gray-100 dark:bg-gray-800"
+          />
+        ) : (
+          <div
+            className={`flex-shrink-0 w-10 h-10 rounded-lg ${experience.color} flex items-center justify-center`}
+          >
+            <span className="text-sm font-bold text-white">
+              {experience.initial}
+            </span>
+          </div>
+        )}
 
         {/* Content */}
         <div className="flex-1">
