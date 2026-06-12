@@ -55,8 +55,7 @@ export default function ParticleBackground({ theme }: Props) {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const parent = canvas.parentElement;
-    if (!parent) return;
+    const parent = canvas.parentElement!;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
