@@ -1,73 +1,101 @@
-# React + TypeScript + Vite
+# 李月 — 个人品牌站
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+基于 React 19 + Vite + TypeScript + Tailwind CSS v4 构建的个人品牌网站，支持亮/暗双主题切换，带有动态粒子背景效果。
 
-Currently, two official plugins are available:
+## 功能特性
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Hero 全屏区** — 带 Canvas 粒子网络背景，响应式适配桌面与移动端
+- **关于我** — 双栏布局展示个人介绍与当前状态，照片降级占位
+- **项目展示** — 卡片网格展示个人作品，hover 微交互
+- **亮/暗主题** — 一键切换，自动跟随系统偏好，无闪烁加载
+- **SEO 优化** — Open Graph / Twitter Card 元标签，robots.txt 爬虫索引
+- **GitHub Pages** — 自动化部署，推送即上线
 
-## React Compiler
+## 技术栈
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| 类别 | 技术 |
+|-----|------|
+| 框架 | React 19 |
+| 语言 | TypeScript |
+| 构建 | Vite 8 |
+| 样式 | Tailwind CSS v4 |
+| 部署 | GitHub Pages |
+| 粒子 | Canvas API |
 
-## Expanding the ESLint configuration
+## 快速开始
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 环境要求
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js ≥ 18
+- npm ≥ 9
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 安装
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone git@github.com:leeue14/my-website.git
+cd my-website
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 开发
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+浏览器打开 http://localhost:5173
+
+### 构建
+
+```bash
+npm run build
+```
+
+产物输出到 `dist/` 目录。
+
+### 部署
+
+```bash
+npm run deploy
+```
+
+构建并发布到 GitHub Pages。线上地址：https://leeue14.github.io/my-website/
+
+## 项目结构
+
+```
+my-website/
+├── public/
+│   ├── favicon.svg          # 网站图标
+│   └── robots.txt           # 爬虫规则
+├── src/
+│   ├── assets/              # 静态资源
+│   ├── components/
+│   │   ├── AboutSection.tsx       # 关于我区域
+│   │   ├── HeroSection.tsx        # Hero 全屏区
+│   │   ├── Navigation.tsx         # 导航栏
+│   │   ├── ParticleBackground.tsx # Canvas 粒子背景
+│   │   ├── ProjectCard.tsx        # 项目卡片
+│   │   ├── ProjectSection.tsx     # 项目展示区
+│   │   └── ThemeToggle.tsx        # 主题切换按钮
+│   ├── App.tsx              # 根组件
+│   ├── main.tsx             # 入口
+│   └── index.css            # 全局样式
+├── index.html               # HTML 模板
+├── vite.config.ts           # Vite 配置
+├── tailwindcss               # Vite 插件自动引入
+└── package.json
+```
+
+## 可用脚本
+
+| 命令 | 说明 |
+|-----|------|
+| `npm run dev` | 启动开发服务器 |
+| `npm run build` | TypeScript 类型检查 + 生产构建 |
+| `npm run preview` | 本地预览生产构建 |
+| `npm run deploy` | 构建并发布到 GitHub Pages |
+
+## License
+
+MIT
