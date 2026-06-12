@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import Navigation from "./components/Navigation";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
+import ExperienceSection from "./components/ExperienceSection";
 import ProjectSection from "./components/ProjectSection";
 
 function getInitialDark(): boolean {
@@ -36,6 +37,7 @@ function App() {
       <Navigation isDark={isDark} onToggleTheme={toggleTheme} />
       <HeroSection theme={isDark ? "dark" : "light"} />
       <AboutSection />
+      <ExperienceSection />
       <ProjectSection />
       <div id="contact" className="scroll-mt-16" />
     </main>

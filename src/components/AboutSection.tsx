@@ -1,9 +1,9 @@
 import { useState, useCallback } from "react";
 
 const PARAGRAPHS = [
-  "拥有 X 年全栈开发经验，专注于 React + TypeScript 技术栈。从 0 到 1 搭建过多个产品，擅长在快速迭代中保持代码质量与工程效率的平衡。",
-  "热衷于探索 AI 驱动的开发新范式。相信 AI 不是替代开发者，而是让我们从重复劳动中解放，将精力投入到真正有创造力的工作中。",
-  "工作之余喜欢研究开源项目、写技术博客，偶尔也在社区分享一些踩坑经验。始终对新技术保持好奇心，享受持续学习的过程。",
+  "8 年服务端开发经验，先后就职于薄荷健康、平安健康等公司。主导 AI 医生对话系统、互联网医院、发券平台等核心业务从 0 到 1 搭建与交付。",
+  "擅长 LLM 应用开发，掌握 LangChain、LangGraph 等框架，有 AI Agent 多节点工作流设计与落地经验。熟悉 Milvus 向量数据库与 RAG 检索增强生成技术。",
+  "具备大型分布式架构设计能力，熟悉 Spring Cloud 微服务体系、MySQL 索引优化、Redis 缓存策略及消息中间件。跨语言（Java/Go/Python）开发，有微服务化改造实战经验。",
 ];
 
 export default function AboutSection() {

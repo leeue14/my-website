@@ -23,11 +23,11 @@ export default function HeroSection({ theme }: Props) {
           李月Leeue
         </h1>
         <p className="mt-4 text-xl font-medium text-gray-700 dark:text-gray-300 sm:text-2xl">
-          全栈工程师
+          AI 工程师 & 服务端开发
         </p>
-        <p className="mt-3 max-w-lg text-base text-gray-500 dark:text-gray-400 sm:text-lg">
-          用代码构建美好产品，专注于用户体验与工程效率
-        </p>
+          <p className="mt-3 max-w-lg text-base text-gray-500 dark:text-gray-400 sm:text-lg">
+            8 年服务端开发经验，近 2 年深耕 AI 应用，专注于 LLM Agent、向量检索与分布式架构
+          </p>
         <button
           onClick={scrollToProjects}
           className="mt-8 rounded-xl bg-black px-6 py-3 text-white font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors"
