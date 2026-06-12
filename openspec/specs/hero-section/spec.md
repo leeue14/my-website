@@ -1,11 +1,11 @@
 ## ADDED Requirements
 
 ### Requirement: Hero 全屏展示
-系统 SHALL 在页面首屏渲染一个全屏高度的 Hero Section（带有 `id="home"` 属性作为导航锚点），垂直水平居中展示用户姓名、职业、一句话个人介绍和 CTA 按钮。
+系统 SHALL 在页面首屏渲染一个全屏高度的 Hero Section（带有 `id="home"` 属性作为导航锚点），垂直水平居中展示用户姓名（李月）、职业（AI 工程师 & 服务端开发）、一句话个人介绍和 CTA 按钮。
 
 #### Scenario: 用户首次访问
 - **WHEN** 用户打开网站首页
-- **THEN** 系统渲染一个占满视口高度的 Hero Section，姓名、职业、介绍文字居中显示，CTA 按钮可见
+- **THEN** 系统渲染一个占满视口高度的 Hero Section，姓名"李月"、职业"AI 工程师 & 服务端开发"、介绍文字居中显示，CTA 按钮可见
 
 #### Scenario: 移动端视口高度适配
 - **WHEN** 用户在移动设备上访问网站
